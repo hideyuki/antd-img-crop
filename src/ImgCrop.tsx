@@ -60,6 +60,8 @@ const ImgCrop = forwardRef<CropperRef, ImgCropProps>((props, cropperRef) => {
     onModalCancel,
     modalProps,
 
+    imageType,
+
     beforeCrop,
     children,
   } = props;
@@ -296,14 +298,14 @@ const ImgCrop = forwardRef<CropperRef, ImgCropProps>((props, cropperRef) => {
                   },
                 });
               },
-              type,
+              imageType || type,
               quality,
             );
           };
         });
       }) as BeforeUpload;
     },
-    [getCropCanvas, quality, runBeforeUpload],
+    [getCropCanvas, quality, imageType, runBeforeUpload],
   );
 
   const getNewUpload = useCallback(
