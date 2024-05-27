@@ -244,7 +244,9 @@ const ImgCrop = forwardRef((props, cropperRef) => {
                     const canvas = getCropCanvas(event.target);
                     const { type, name, uid } = processedFile;
                     canvas.toBlob((blob) => __awaiter(void 0, void 0, void 0, function* () {
-                        const newFile = new File([blob], name, { type });
+                        const newFile = new File([blob], name, {
+                            type: imageType || type,
+                        });
                         Object.assign(newFile, { uid });
                         runBeforeUpload({
                             beforeUpload,
