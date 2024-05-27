@@ -63,6 +63,8 @@ export type ImgCropProps = {
     | 'destroyOnClose'
   >;
 
+  imageType?: string;
+
   beforeCrop?: BeforeUpload;
   children: JSX.Element;
 };
